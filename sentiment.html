@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sentiment Analysis - Mercedes Feedback & Booking</title>
+  <style>
+    :root { --gold:#c59d5f; --dark:#0a192f; }
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f9f9f9; }
+    header, footer { background:var(--dark); color:white; padding:15px; text-align:center; }
+    nav a { margin:0 15px; text-decoration:none; color:white; font-weight:bold; }
+    nav a.active { color:var(--gold); }
+    main { padding:40px; text-align:center; }
+    textarea { width:80%; padding:15px; border-radius:8px; border:1px solid #ccc; }
+    button { margin-top:15px; padding:10px 20px; background:var(--gold); color:white; border:none; border-radius:8px; cursor:pointer; }
+    #result { margin-top:20px; font-weight:bold; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mercedes Feedback & Booking</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="sentiment.html" class="active">Sentiment</a>
+      <a href="text_to_speech.html">Text-to-Speech</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>AI Sentiment Analysis</h2>
+    <p>Enter your feedback about Mercedes and see how our AI interprets it.</p>
+    <textarea id="feedback" rows="5" placeholder="Type your feedback here..."></textarea><br>
+    <button onclick="analyzeSentiment()">Analyze</button>
+    <div id="result"></div>
+  </main>
+
+  <footer>
+    <p>© 2025 Mercedes Feedback & Booking. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function analyzeSentiment() {
+      let text = document.getElementById("feedback").value.toLowerCase();
+      let result = "";
+      if (text.includes("good") || text.includes("love") || text.includes("excellent")) {
+        result = "😊 Positive Feedback Detected!";
+      } else if (text.includes("bad") || text.includes("poor") || text.includes("worst")) {
+        result = "😡 Negative Feedback Detected!";
+      } else {
+        result = "😐 Neutral Feedback Detected!";
+      }
+      document.getElementById("result").innerText = result;
+    }
+  </script>
+</body>
+</html>
