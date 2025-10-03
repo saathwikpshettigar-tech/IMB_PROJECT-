@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercedes Feedback & Booking - Home</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root { --gold-color: #c59d5f; }
+    .btn-golden { background: var(--gold-color); color: white; padding: .75rem 1.5rem; border-radius: 9999px; font-weight: 600; transition: all .3s; }
+    .btn-golden:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(197,157,95,.4); }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 flex flex-col min-h-screen">
+  <header id="header" class="sticky top-0 bg-white/80 backdrop-blur-md shadow-md z-50"></header>
+
+  <main class="flex-grow">
+    <section class="py-20 container mx-auto px-6">
+      <h1 class="text-4xl md:text-5xl font-playfair font-bold text-center mb-10">Mercedes Feedback & Booking</h1>
+
+      <!-- Booking Form -->
+      <div class="max-w-3xl mx-auto bg-white shadow-xl rounded-2xl p-8 mb-12">
+        <h2 class="text-2xl font-bold mb-6">Book a Test Drive</h2>
+        <form class="space-y-4">
+          <div>
+            <label class="block font-semibold mb-1">Name</label>
+            <input type="text" class="w-full border rounded-md p-3" placeholder="Your name" required>
+          </div>
+          <div>
+            <label class="block font-semibold mb-1">Select Model</label>
+            <select class="w-full border rounded-md p-3">
+              <option>A-Class</option>
+              <option>C-Class</option>
+              <option>E-Class</option>
+              <option>S-Class</option>
+              <option>GLA</option>
+              <option>GLC</option>
+              <option>GLE</option>
+            </select>
+          </div>
+          <div>
+            <label class="block font-semibold mb-1">Preferred Date</label>
+            <input type="date" class="w-full border rounded-md p-3" required>
+          </div>
+          <button class="btn-golden w-full">Book Now</button>
+        </form>
+      </div>
+
+      <!-- Feedback Form -->
+      <div class="max-w-3xl mx-auto bg-white shadow-xl rounded-2xl p-8">
+        <h2 class="text-2xl font-bold mb-6">Leave Your Feedback</h2>
+        <textarea class="w-full border rounded-md p-3 mb-4" rows="6" placeholder="Write your feedback here..."></textarea>
+        <button class="btn-golden w-full">Submit Feedback</button>
+      </div>
+    </section>
+  </main>
+
+  <footer id="footer" class="bg-gray-900 text-white py-10 mt-auto"></footer>
+
+  <script src="nav.js"></script>
+</body>
+</html>
