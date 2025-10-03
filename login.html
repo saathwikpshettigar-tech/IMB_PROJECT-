@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercedes Feedback & Booking - Login</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+  <header id="header" class="sticky top-0 bg-white/80 backdrop-blur-md shadow-md z-50"></header>
+
+  <main class="flex-grow flex items-center justify-center">
+    <div class="bg-white p-8 rounded-2xl shadow-xl w-full max-w-md">
+      <h2 class="text-2xl font-bold mb-6 text-center">Login</h2>
+      <form id="login-form" class="space-y-4">
+        <div>
+          <label class="block mb-1 font-semibold">Username</label>
+          <input id="username" type="text" class="w-full border rounded-md p-3" required>
+        </div>
+        <div>
+          <label class="block mb-1 font-semibold">Password</label>
+          <input id="password" type="password" class="w-full border rounded-md p-3" required>
+        </div>
+        <button type="submit" class="w-full py-3 bg-[var(--gold-color)] text-white font-bold rounded-full">Login</button>
+      </form>
+    </div>
+  </main>
+
+  <footer id="footer" class="bg-gray-900 text-white py-10 mt-auto"></footer>
+
+  <script src="nav.js"></script>
+  <script>
+    document.getElementById("login-form").addEventListener("submit", e => {
+      e.preventDefault();
+      const username = document.getElementById("username").value;
+      localStorage.setItem("loggedInUser", username);
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>
