@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Text-to-Speech - Mercedes Feedback & Booking</title>
+  <style>
+    :root { --gold:#c59d5f; --dark:#0a192f; }
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#eef2f3; }
+    header, footer { background:var(--dark); color:white; padding:15px; text-align:center; }
+    nav a { margin:0 15px; text-decoration:none; color:white; font-weight:bold; }
+    nav a.active { color:var(--gold); }
+    main { padding:40px; text-align:center; }
+    textarea { width:80%; padding:15px; border-radius:8px; border:1px solid #ccc; }
+    button { margin-top:15px; padding:10px 20px; background:var(--gold); color:white; border:none; border-radius:8px; cursor:pointer; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Mercedes Feedback & Booking</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="sentiment.html">Sentiment</a>
+      <a href="text_to_speech.html" class="active">Text-to-Speech</a>
+      <a href="login.html">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>Text-to-Speech Converter</h2>
+    <p>Enter text and listen to it spoken aloud.</p>
+    <textarea id="ttsText" rows="5" placeholder="Type something..."></textarea><br>
+    <button onclick="speak()">🔊 Speak</button>
+  </main>
+
+  <footer>
+    <p>© 2025 Mercedes Feedback & Booking. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function speak() {
+      let text = document.getElementById("ttsText").value;
+      if (!text) {
+        alert("Please enter text!");
+        return;
+      }
+      let utter = new SpeechSynthesisUtterance(text);
+      speechSynthesis.speak(utter);
+    }
+  </script>
+</body>
+</html>
